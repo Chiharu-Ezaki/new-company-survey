@@ -1082,6 +1082,14 @@
             // --- 定数定義 ---
             const FORM_STATE_KEY = 'hearingFormState';
             const form = document.getElementById('hearing-form-main');
+
+            // Prevent form submission on Enter key, except for textareas
+            form.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && e.target.tagName.toLowerCase() !== 'textarea') {
+                    e.preventDefault();
+                }
+            });
+
             const categories = { "介護": ["身体介護等"], "ビルクリーニング": ["建築物内部の清掃"], "工業製品製造業": ["電気電子機器組立て", "金属表面処理", "紙器・段ボール箱製造", "コンクリート製品製造区分", "RPF製造区分", "陶磁器製品製造区分", "印刷・製本区分", "紡織製品製造区分", "縫製区分"], "建設": ["土木", "建築", "ライフライン・設備"], "造船・舶用工業": ["造船", "舶用機械", "舶用電気電子機器"], "自動車整備": ["自動車の日常点検整備、定期点検整備、特定整備、特定整備に付随する業務全般"], "航空": ["グランドハンドリング（旅客・手荷物・貨物・ランプ等の地上支援）", "空機整備（機体・装備品等の整備支援）"], "宿泊": ["旅館やホテルにおけるフロント、企画・広報、接客及びレストランサービス等の宿泊サービスの提供業務全般"], "農業": ["耕種農業", "畜産農業"], "漁業": ["漁業", "養殖業"], "飲食料品製造業": ["飲食料品製造業全般"], "外食業": ["調理、接客、店舗管理 等全般"], "林業": ["森林において樹木を育てて丸太を生産し、苗木を植える等の作業全般"], "木材産業": ["木・材・木製品の製造・加工全般"], "自動車運送業": ["バス運転者", "タクシー運転者", "トラック運転者"], "鉄道": ["軌道整備", "電気設備整備", "車両整備", "車両製造", "運輸係員"] };
             const prefectures = ["北海道", "青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県", "茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県", "新潟県", "富山県", "石川県", "福井県", "山梨県", "長野県", "岐阜県", "静岡県", "愛知県", "三重県", "滋賀県", "京都府", "大阪府", "兵庫県", "奈良県", "和歌山県", "鳥取県", "島根県", "岡山県", "広島県", "山口県", "徳島県", "香川県", "愛媛県", "高知県", "福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県"];
             const jacOrganizations = ["（一社）JBN・全国工務店協会", "（一社）情報通信エンジニアリング協会", "全国圧接業協同組合連合会", "全国管工事業協同組合連合会", "（一社）全国基礎工事業団体連合会", "（一社）全国建設室内工事業協会", "全国建設労働組合総連合", "（一社）全国建築測量協会", "（一社）全国コンクリート圧送事業団体連合会", "全国サイディング事業協同組合連合会", "（一社）全国住宅産業地域活性化協議会", "（一社）全国タイル業協会", "（一社）全国ダクト工業団体連合会", "（公社）全国鉄筋工事業協会", "（一社）全国特定法面保護協会", "（一社）全国防水工事業協会", "（一社）全日本瓦工事業連盟", "（一社）全日本漁港建設協会", "（一社）日本ウレタン断熱協会", "日本外壁仕上業協同組合連合会", "（一社）日本型枠工事業協会", "（一社）日本機械土工協会", "（一社）日本基礎建設協会", "（一社）日本金属屋根協会", "（一社）日本空調衛生工事業協会", "日本建設インテリア事業協同組合連合会", "（一社）日本建設機械レンタル協会", "（一社）日本建設躯体工事業団体連合会", "（一社）日本建築板金協会", "日本港湾空港建設協会連合会", "（一社）日本在来工法住宅協会", "（一社）日本左官業組合連合会", "日本室内装飾事業協同組合連合会", "日本住宅パネル工業協同組合", "（公社）日本推進技術協会", "（一社）日本造園組合連合会", "（一社）日本タイル煉瓦工事工業会", "（一社）日本築炉人材育成協会", "（一社）日本ツーバイフォー建築協会", "（一社）日本塗装工業会", "（一社）日本建設業連合会", "（一社）日本道路建設業協会", "（一社）日本発破・破砕協会", "（一社）日本保温保冷工業協会", "（一社）日本冷凍空調設備工業連合会", "（一社）プレストレスト・コンクリート工事業協会", "（一社）SIEN", "（一社）全国建設業協会", "（一社）全国中小建設業協会", "（一社）全国中小建設工事業団体連合会", "（一社）マンション計画修繕施工協会"];
@@ -1208,6 +1216,7 @@
                 
                 setupCheckboxToggle('other-social-insurance-checkbox', 'other-social-insurance-container');
                 setupCheckboxToggle('nationality-other-checkbox', 'other-nationality-container');
+                setupCheckboxToggle('other-holiday-checkbox', 'other-holiday-input');
 
                 // 職種に応じた表示切替
                 document.getElementById('field-select').addEventListener('change', e => {
@@ -1323,24 +1332,47 @@
                 // フォーム送信
                 form.addEventListener('submit', async function(e) {
                     e.preventDefault();
-                    const formData = new FormData(form);
-                    const data = Object.fromEntries(formData.entries());
-                    try {
-                        const response = await fetch("https://formspree.io/f/xzzazwgo", {
-                            method: 'POST',
-                            body: JSON.stringify(data),
-                            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
-                        });
-                        if (response.ok) {
-                            showMessage('フォームが正常に送信されました！');
-                            localStorage.removeItem(FORM_STATE_KEY);
-                            form.reset();
-                        } else {
-                            throw new Error('サーバーエラーが発生しました。');
+                    
+                    // Change modal button text and style for submission confirmation
+                    const confirmBtn = document.getElementById('modal-confirm-btn');
+                    const cancelBtn = document.getElementById('modal-cancel-btn');
+                    const originalConfirmText = confirmBtn.textContent;
+                    const originalCancelText = cancelBtn.textContent;
+                    const originalConfirmClasses = confirmBtn.className;
+
+                    confirmBtn.textContent = '確認';
+                    cancelBtn.textContent = '戻る';
+                    confirmBtn.className = 'button submit-button'; // Use submit button style
+
+                    const confirmed = await showConfirmModal('本当にこれで送信してよろしいですか？', '送信確認');
+
+                    // Restore original modal button state for other uses (like the clear button)
+                    confirmBtn.textContent = originalConfirmText;
+                    cancelBtn.textContent = originalCancelText;
+                    confirmBtn.className = originalConfirmClasses;
+
+                    if (confirmed) {
+                        const formData = new FormData(form);
+                        const data = Object.fromEntries(formData.entries());
+                        try {
+                            const response = await fetch("https://formspree.io/f/xzzazwgo", {
+                                method: 'POST',
+                                body: JSON.stringify(data),
+                                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+                            });
+                            if (response.ok) {
+                                showMessage('フォームが正常に送信されました！');
+                                localStorage.removeItem(FORM_STATE_KEY);
+                                form.reset();
+                                // Trigger change events to correctly reset the UI state
+                                document.querySelectorAll('input[type="radio"], input[type="checkbox"], select').forEach(el => el.dispatchEvent(new Event('change', { bubbles: true })));
+                            } else {
+                                throw new Error('サーバーエラーが発生しました。');
+                            }
+                        } catch (error) {
+                            console.error('Submission error:', error);
+                            showMessage('フォームの送信に失敗しました。時間をおいて再試行してください。', 'error');
                         }
-                    } catch (error) {
-                        console.error('Submission error:', error);
-                        showMessage('フォームの送信に失敗しました。時間をおいて再試行してください。', 'error');
                     }
                 });
             }
@@ -1384,3 +1416,4 @@
     </script>
 </body>
 </html>
+
