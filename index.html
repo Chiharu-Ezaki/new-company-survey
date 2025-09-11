@@ -1500,7 +1500,40 @@
 
                     if (confirmed) {
                         const formData = new FormData(form);
-                        const data = Object.fromEntries(formData.entries());
+                        const data = {};
+                        const processedKeys = new Set();
+
+                        // 1. 通常のフォームデータを処理する
+                        for (let key of formData.keys()) {
+                            // ラベルデータはスキップ
+                            if (key.startsWith('_labels')) continue;
+                            
+                            // 配列キー（例: 'executive_name[]'）から '[]' を除いたキーを生成
+                            const cleanKey = key.replace('[]', '');
+                            
+                            // 同じキー（配列）を複数回処理しないようにする
+                            if (processedKeys.has(cleanKey)) continue;
+
+                            const allValues = formData.getAll(key);
+                            data[cleanKey] = allValues.length > 1 ? allValues : allValues[0];
+                            processedKeys.add(cleanKey);
+                        }
+
+                        // 2. ラベルデータを処理し、_labelsオブジェクトを作成する
+                        const labels = {};
+                        for (let key of formData.keys()) {
+                            if (key.startsWith('_labels[')) {
+                                // キーからフィールド名（例: 'company_name_full'）を抽出
+                                const fieldName = key.substring(8, key.length - 1).replace('[]', '');
+                                labels[fieldName] = formData.get(key);
+                            }
+                        }
+                        
+                        // ラベルデータが存在する場合のみ、dataオブジェクトに追加
+                        if (Object.keys(labels).length > 0) {
+                            data._labels = labels;
+                        }
+
                         try {
                             const response = await fetch("https://formspree.io/f/xzzazwgo", {
                                 method: 'POST',
@@ -1563,3 +1596,4 @@
     </script>
 </body>
 </html>
+
