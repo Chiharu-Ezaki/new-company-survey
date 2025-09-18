@@ -18,12 +18,10 @@
         .container {
             max-width: 900px;
             margin: auto;
-            padding: 2rem;
         }
         .form-section {
             background-color: #ffffff;
             border-radius: 1.5rem;
-            padding: 2.5rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             margin-bottom: 2rem;
         }
@@ -186,74 +184,63 @@
     </style>
 </head>
 <body>
-    <div class="container bg-white rounded-3xl shadow-xl">
-        <h1 class="text-3xl font-bold text-center mb-8">外国人材受入ヒアリングフォーム（特定技能用）</h1>
+    <div class="container bg-white rounded-3xl shadow-xl p-4 sm:p-8 my-8">
+        <h1 class="text-2xl md:text-3xl font-bold text-center mb-8">外国人材受入ヒアリングフォーム（特定技能用）</h1>
         <p class="text-center text-gray-600 mb-8">
             特定技能制度についてご不明な点がある方は、<a href="https://www.jitco.or.jp/ja/skill/" target="_blank" class="text-blue-600 underline hover:text-blue-800 transition-colors">こちら</a>をご覧ください。
         </p>
 
         <form id="hearing-form-main" novalidate>
             <!-- 1. 企業基本情報 -->
-            <div class="form-section">
+            <div class="form-section p-6 sm:p-8">
                 <h2 class="form-section-title">1. 企業基本情報</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="form-group">
                         <label for="company_name_full">会社名 (正式名称)</label>
-                        <input type="text" id="company_name_full" name="company_name_full" class="form-input" placeholder="株式会社〇〇">
-                        <input type="hidden" name="_labels[company_name_full]" value="会社名 (正式名称)">
+                        <input type="text" id="company_name_full" name="会社名 (正式名称)" class="form-input" placeholder="株式会社〇〇">
                     </div>
                     <div class="form-group">
                         <label for="company_name_kana">会社名 (フリガナ)</label>
-                        <input type="text" id="company_name_kana" name="company_name_kana" class="form-input" placeholder="カブシキガイシャ〇〇">
-                        <input type="hidden" name="_labels[company_name_kana]" value="会社名 (フリガナ)">
+                        <input type="text" id="company_name_kana" name="会社名 (フリガナ)" class="form-input" placeholder="カブシキガイシャ〇〇">
                     </div>
                     <div class="form-group">
                         <label for="company_name_alpha">会社名 (アルファベット表記)</label>
-                        <input type="text" id="company_name_alpha" name="company_name_alpha" class="form-input" placeholder="Co., Ltd.">
-                        <input type="hidden" name="_labels[company_name_alpha]" value="会社名 (アルファベット表記)">
+                        <input type="text" id="company_name_alpha" name="会社名 (アルファベット表記)" class="form-input" placeholder="Co., Ltd.">
                     </div>
                     <div class="form-group">
                         <label for="corporate_number">法人番号</label>
-                        <input type="text" id="corporate_number" name="corporate_number" class="form-input" placeholder="13桁の数字">
-                        <input type="hidden" name="_labels[corporate_number]" value="法人番号">
+                        <input type="text" id="corporate_number" name="法人番号" class="form-input" placeholder="13桁の数字">
                     </div>
                     <div class="form-group col-span-2">
                         <label for="postal-code">本社所在地</label>
                         <div class="flex items-center space-x-2 mb-2">
                             <span class="text-gray-500">〒</span>
-                            <input type="text" id="postal-code" class="form-input w-36" name="postal_code" placeholder="1234567">
-                            <input type="hidden" name="_labels[postal_code]" value="郵便番号">
+                            <input type="text" id="postal-code" class="form-input w-36" name="郵便番号" placeholder="1234567">
                         </div>
-                        <input type="text" id="headquarters-address" name="headquarters_address" class="form-input" placeholder="例: 東京都千代田区〇〇 1-2-3">
-                        <input type="hidden" name="_labels[headquarters_address]" value="本社所在地">
+                        <input type="text" id="headquarters-address" name="本社所在地" class="form-input" placeholder="例: 東京都千代田区〇〇 1-2-3">
                     </div>
                     <div class="form-group">
                         <label for="phone_number">電話番号</label>
-                        <input type="tel" id="phone_number" name="phone_number" class="form-input" placeholder="ハイフン不要">
-                        <input type="hidden" name="_labels[phone_number]" value="電話番号">
+                        <input type="tel" id="phone_number" name="電話番号" class="form-input" placeholder="ハイフン不要">
                     </div>
                     <div class="form-group">
                         <label for="email">メールアドレス</label>
-                        <input type="email" id="email" name="email" class="form-input" placeholder="info@example.com">
-                        <input type="hidden" name="_labels[email]" value="メールアドレス">
+                        <input type="email" id="email" name="メールアドレス" class="form-input" placeholder="info@example.com">
                     </div>
                     <div class="form-group">
                         <label for="capital">資本金</label>
                         <div class="flex items-center space-x-2">
-                            <input type="number" id="capital" name="capital" class="form-input">
-                            <input type="hidden" name="_labels[capital]" value="資本金">
+                            <input type="number" id="capital" name="資本金" class="form-input">
                             <span>円</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="representative_info">代表者氏名・役職</label>
-                        <input type="text" id="representative_info" name="representative_info" class="form-input" placeholder="例: 山田 太郎 / 代表取締役">
-                        <input type="hidden" name="_labels[representative_info]" value="代表者氏名・役職">
+                        <input type="text" id="representative_info" name="代表者氏名・役職" class="form-input" placeholder="例: 山田 太郎 / 代表取締役">
                     </div>
                     <div class="form-group col-span-2">
                         <label for="business_content">事業内容 (業種・主な仕事内容)</label>
-                        <input type="text" id="business_content" name="business_content" class="form-input">
-                        <input type="hidden" name="_labels[business_content]" value="事業内容">
+                        <input type="text" id="business_content" name="事業内容" class="form-input">
                     </div>
                 </div>
 
@@ -265,68 +252,49 @@
                     </div>
                     <div id="executives-container">
                         <div class="flex flex-wrap items-center space-x-0 md:space-x-2 mb-2 space-y-2 md:space-y-0">
-                            <input type="text" class="form-input flex-1" name="executive_name[]" placeholder="氏名">
-                            <input type="hidden" name="_labels[executive_name[]]" value="役員氏名">
-                            <input type="text" class="form-input flex-1" name="executive_kana[]" placeholder="フリガナ">
-                            <input type="hidden" name="_labels[executive_kana[]]" value="役員フリガナ">
-                            <input type="text" class="form-input flex-1" name="executive_position[]" placeholder="役職">
-                            <input type="hidden" name="_labels[executive_position[]]" value="役員役職">
+                            <input type="text" class="form-input flex-1" name="役員氏名[]" placeholder="氏名">
+                            <input type="text" class="form-input flex-1" name="役員フリガナ[]" placeholder="フリガナ">
+                            <input type="text" class="form-input flex-1" name="役員役職[]" placeholder="役職">
                         </div>
                     </div>
                 </div>
             </div>
 
              <!-- 2. 経営状況 -->
-            <div class="form-section">
+            <div class="form-section p-6 sm:p-8">
                 <h2 class="form-section-title">2. 経営状況</h2>
                 <div class="form-group">
                     <label>決算状況 (過去3期分)</label>
                     <div class="radio-group">
-                        <div class="radio-item"><input type="radio" name="financial_status_option" value="document" id="financial-document" checked>書類提出</div>
-                        <div class="radio-item"><input type="radio" name="financial_status_option" value="describe" id="financial-describe">下記記載</div>
-                        <div class="radio-item"><input type="radio" name="financial_status_option" value="sole_proprietor" id="financial-sole-proprietor">個人事業主（提出不要）</div>
-                        <input type="hidden" name="_labels[financial_status_option]" value="決算状況の選択">
+                        <div class="radio-item"><input type="radio" name="決算状況の選択" value="document" id="financial-document" checked>書類提出</div>
+                        <div class="radio-item"><input type="radio" name="決算状況の選択" value="describe" id="financial-describe">下記記載</div>
+                        <div class="radio-item"><input type="radio" name="決算状況の選択" value="sole_proprietor" id="financial-sole-proprietor">個人事業主（提出不要）</div>
                     </div>
                     <div id="financial-fields-container" class="mt-4 hidden">
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             <div>
                                 <label class="text-sm font-medium">直近決算期</label>
-                                <input type="text" class="form-input" name="financial_year_1" placeholder="〇年〇月決算">
-                                <input type="hidden" name="_labels[financial_year_1]" value="直近決算期">
-                                <input type="number" class="form-input mt-2" name="sales_1" placeholder="売上高">
-                                <input type="hidden" name="_labels[sales_1]" value="直近決算期 売上高">
-                                <input type="number" class="form-input mt-2" name="ordinary_profit_1" placeholder="経常利益">
-                                <input type="hidden" name="_labels[ordinary_profit_1]" value="直近決算期 経常利益">
-                                <input type="number" class="form-input mt-2" name="net_income_1" placeholder="純利益">
-                                <input type="hidden" name="_labels[net_income_1]" value="直近決算期 純利益">
-                                <input type="number" class="form-input mt-2" name="net_assets_1" placeholder="純資産">
-                                <input type="hidden" name="_labels[net_assets_1]" value="直近決算期 純資産">
+                                <input type="text" class="form-input" name="直近決算期" placeholder="〇年〇月決算">
+                                <input type="number" class="form-input mt-2" name="直近決算期 売上高" placeholder="売上高">
+                                <input type="number" class="form-input mt-2" name="直近決算期 経常利益" placeholder="経常利益">
+                                <input type="number" class="form-input mt-2" name="直近決算期 純利益" placeholder="純利益">
+                                <input type="number" class="form-input mt-2" name="直近決算期 純資産" placeholder="純資産">
                             </div>
                             <div>
                                 <label class="text-sm font-medium">直近から1期前</label>
-                                <input type="text" class="form-input" name="financial_year_2" placeholder="〇年〇月決算">
-                                <input type="hidden" name="_labels[financial_year_2]" value="1期前決算期">
-                                <input type="number" class="form-input mt-2" name="sales_2" placeholder="売上高">
-                                <input type="hidden" name="_labels[sales_2]" value="1期前 売上高">
-                                <input type="number" class="form-input mt-2" name="ordinary_profit_2" placeholder="経常利益">
-                                <input type="hidden" name="_labels[ordinary_profit_2]" value="1期前 経常利益">
-                                <input type="number" class="form-input mt-2" name="net_income_2" placeholder="純利益">
-                                <input type="hidden" name="_labels[net_income_2]" value="1期前 純利益">
-                                <input type="number" class="form-input mt-2" name="net_assets_2" placeholder="純資産">
-                                <input type="hidden" name="_labels[net_assets_2]" value="1期前 純資産">
+                                <input type="text" class="form-input" name="1期前決算期" placeholder="〇年〇月決算">
+                                <input type="number" class="form-input mt-2" name="1期前 売上高" placeholder="売上高">
+                                <input type="number" class="form-input mt-2" name="1期前 経常利益" placeholder="経常利益">
+                                <input type="number" class="form-input mt-2" name="1期前 純利益" placeholder="純利益">
+                                <input type="number" class="form-input mt-2" name="1期前 純資産" placeholder="純資産">
                             </div>
                             <div>
                                 <label class="text-sm font-medium">直近から2期前</label>
-                                <input type="text" class="form-input" name="financial_year_3" placeholder="〇年〇月決算">
-                                <input type="hidden" name="_labels[financial_year_3]" value="2期前決算期">
-                                <input type="number" class="form-input mt-2" name="sales_3" placeholder="売上高">
-                                <input type="hidden" name="_labels[sales_3]" value="2期前 売上高">
-                                <input type="number" class="form-input mt-2" name="ordinary_profit_3" placeholder="経常利益">
-                                <input type="hidden" name="_labels[ordinary_profit_3]" value="2期前 経常利益">
-                                <input type="number" class="form-input mt-2" name="net_income_3" placeholder="純利益">
-                                <input type="hidden" name="_labels[net_income_3]" value="2期前 純利益">
-                                <input type="number" class="form-input mt-2" name="net_assets_3" placeholder="純資産">
-                                <input type="hidden" name="_labels[net_assets_3]" value="2期前 純資産">
+                                <input type="text" class="form-input" name="2期前決算期" placeholder="〇年〇月決算">
+                                <input type="number" class="form-input mt-2" name="2期前 売上高" placeholder="売上高">
+                                <input type="number" class="form-input mt-2" name="2期前 経常利益" placeholder="経常利益">
+                                <input type="number" class="form-input mt-2" name="2期前 純利益" placeholder="純利益">
+                                <input type="number" class="form-input mt-2" name="2期前 純資産" placeholder="純資産">
                             </div>
                         </div>
                     </div>
@@ -334,14 +302,13 @@
             </div>
 
             <!-- 3. 基準適合性に係る事項 -->
-            <div class="form-section">
+            <div class="form-section p-6 sm:p-8">
                 <h2 class="form-section-title">3. 基準適合性に係る事項</h2>
                 <div class="form-group">
                     <label>過去の入管法違反・労基法違反の有無</label>
                     <div class="radio-group">
-                        <div class="radio-item"><input type="radio" name="legal_violation" value="yes" id="violation-yes">有</div>
-                        <div class="radio-item"><input type="radio" name="legal_violation" value="no" id="violation-no" checked>無</div>
-                        <input type="hidden" name="_labels[legal_violation]" value="法違反の有無">
+                        <div class="radio-item"><input type="radio" name="法違反の有無" value="yes" id="violation-yes">有</div>
+                        <div class="radio-item"><input type="radio" name="法違反の有無" value="no" id="violation-no" checked>無</div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -349,26 +316,22 @@
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                         <div class="flex items-center space-x-2">
                             <span>自発的離職者（日本人）：</span>
-                            <input type="number" class="form-input w-20" name="voluntary_leaving_japanese" placeholder="0" min="0" value="0">
-                            <input type="hidden" name="_labels[voluntary_leaving_japanese]" value="自発的離職者(日本人)">
+                            <input type="number" class="form-input w-20" name="自発的離職者(日本人)" placeholder="0" min="0" value="0">
                             <span>名</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <span>自発的離職者（外国人）：</span>
-                            <input type="number" class="form-input w-20" name="voluntary_leaving_foreign" placeholder="0" min="0" value="0">
-                            <input type="hidden" name="_labels[voluntary_leaving_foreign]" value="自発的離職者(外国人)">
+                            <input type="number" class="form-input w-20" name="自発的離職者(外国人)" placeholder="0" min="0" value="0">
                             <span>名</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <span>非自発的離職者（日本人）：</span>
-                            <input type="number" class="form-input w-20" name="involuntary_leaving_japanese" placeholder="0" min="0" value="0">
-                            <input type="hidden" name="_labels[involuntary_leaving_japanese]" value="非自発的離職者(日本人)">
+                            <input type="number" class="form-input w-20" name="非自発的離職者(日本人)" placeholder="0" min="0" value="0">
                             <span>名</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <span>非自発的離職者（外国人）：</span>
-                            <input type="number" class="form-input w-20" name="involuntary_leaving_foreign" placeholder="0" min="0" value="0">
-                            <input type="hidden" name="_labels[involuntary_leaving_foreign]" value="非自発的離職者(外国人)">
+                            <input type="number" class="form-input w-20" name="非自発的離職者(外国人)" placeholder="0" min="0" value="0">
                             <span>名</span>
                         </div>
                     </div>
@@ -378,22 +341,18 @@
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                         <div class="flex items-center space-x-2">
                             <span>特定技能生：</span>
-                            <input type="number" class="form-input w-20" name="missing_specified_skill" placeholder="0" min="0" value="0">
-                            <input type="hidden" name="_labels[missing_specified_skill]" value="行方不明者(特定技能)">
+                            <input type="number" class="form-input w-20" name="行方不明者(特定技能)" placeholder="0" min="0" value="0">
                             <span>名</span>
                             <span class="text-xs text-gray-500">（内、責めに帰すべき理由による行方不明</span>
-                            <input type="number" class="form-input w-16" name="missing_specified_skill_responsible" placeholder="0" min="0" value="0">
-                            <input type="hidden" name="_labels[missing_specified_skill_responsible]" value="行方不明者(特定技能・帰責理由有)">
+                            <input type="number" class="form-input w-16" name="行方不明者(特定技能・帰責理由有)" placeholder="0" min="0" value="0">
                             <span class="text-xs text-gray-500">名）</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <span>技能実習生：</span>
-                            <input type="number" class="form-input w-20" name="missing_trainee" placeholder="0" min="0" value="0">
-                            <input type="hidden" name="_labels[missing_trainee]" value="行方不明者(技能実習生)">
+                            <input type="number" class="form-input w-20" name="行方不明者(技能実習生)" placeholder="0" min="0" value="0">
                             <span>名</span>
                             <span class="text-xs text-gray-500">（内、責めに帰すべき理由による行方不明</span>
-                            <input type="number" class="form-input w-16" name="missing_trainee_responsible" placeholder="0" min="0" value="0">
-                            <input type="hidden" name="_labels[missing_trainee_responsible]" value="行方不明者(技能実習生・帰責理由有)">
+                            <input type="number" class="form-input w-16" name="行方不明者(技能実習生・帰責理由有)" placeholder="0" min="0" value="0">
                             <span class="text-xs text-gray-500">名）</span>
                         </div>
                     </div>
@@ -401,19 +360,17 @@
             </div>
 
             <!-- 4. 報酬の妥当性について -->
-            <div class="form-section">
+            <div class="form-section p-6 sm:p-8">
                 <h2 class="form-section-title">4. 報酬の妥当性について</h2>
                 <div class="form-group">
                     <label for="job_description">特定技能生に求める職務内容・責任の程度</label>
-                    <textarea id="job_description" class="form-textarea" rows="4" name="job_description" placeholder="例: 一般社員、指導員の指示の元〇〇の基礎的な業務に従事"></textarea>
-                    <input type="hidden" name="_labels[job_description]" value="求める職務内容">
+                    <textarea id="job_description" class="form-textarea" rows="4" name="求める職務内容" placeholder="例: 一般社員、指導員の指示の元〇〇の基礎的な業務に従事"></textarea>
                 </div>
                 <div class="form-group">
                     <label>比較対象となる日本人労働者の有無</label>
                     <div class="radio-group">
-                        <div class="radio-item"><input type="radio" name="japanese_worker_comparison" value="yes" id="japanese-worker-yes">有</div>
-                        <div class="radio-item"><input type="radio" name="japanese_worker_comparison" value="no" id="japanese-worker-no" checked>無</div>
-                        <input type="hidden" name="_labels[japanese_worker_comparison]" value="比較対象日本人の有無">
+                        <div class="radio-item"><input type="radio" name="比較対象日本人の有無" value="yes" id="japanese-worker-yes">有</div>
+                        <div class="radio-item"><input type="radio" name="比較対象日本人の有無" value="no" id="japanese-worker-no" checked>無</div>
                     </div>
                     <p class="text-sm text-gray-500 mt-2">※無に選択した場合でも、一番近しい日本人の情報をご記入ください。</p>
                     <div id="japanese-worker-fields" class="mt-4">
@@ -421,32 +378,28 @@
                             <div>
                                 <label class="text-sm font-medium">年齢</label>
                                 <div class="flex items-center space-x-2">
-                                    <input type="number" class="form-input" name="japanese_worker_age" placeholder="年齢">
-                                    <input type="hidden" name="_labels[japanese_worker_age]" value="比較対象日本人 年齢">
+                                    <input type="number" class="form-input" name="比較対象日本人 年齢" placeholder="年齢">
                                     <span>歳</span>
                                 </div>
                             </div>
                             <div>
                                 <label class="text-sm font-medium">性別</label>
                                 <div class="radio-group mt-2">
-                                    <div class="radio-item"><input type="radio" name="japanese_gender" value="male">男</div>
-                                    <div class="radio-item"><input type="radio" name="japanese_gender" value="female">女</div>
-                                    <input type="hidden" name="_labels[japanese_gender]" value="比較対象日本人 性別">
+                                    <div class="radio-item"><input type="radio" name="比較対象日本人 性別" value="male">男</div>
+                                    <div class="radio-item"><input type="radio" name="比較対象日本人 性別" value="female">女</div>
                                 </div>
                             </div>
                             <div class="col-span-2">
                                 <label class="text-sm font-medium">経験年数</label>
                                 <div class="flex items-center space-x-2">
-                                    <input type="text" class="form-input" name="japanese_worker_experience" placeholder="経験年数">
-                                    <input type="hidden" name="_labels[japanese_worker_experience]" value="比較対象日本人 経験年数">
+                                    <input type="text" class="form-input" name="比較対象日本人 経験年数" placeholder="経験年数">
                                     <span>年</span>
                                 </div>
                             </div>
                             <div>
                                 <label class="text-sm font-medium">月給</label>
                                 <div class="flex items-center space-x-2">
-                                    <input type="number" class="form-input" name="japanese_worker_salary" placeholder="月給">
-                                    <input type="hidden" name="_labels[japanese_worker_salary]" value="比較対象日本人 月給">
+                                    <input type="number" class="form-input" name="比較対象日本人 月給" placeholder="月給">
                                     <span>円</span>
                                 </div>
                             </div>
@@ -454,10 +407,8 @@
                                 <label class="text-sm font-medium">その他手当</label>
                                 <div id="other-allowances-container" class="space-y-2">
                                     <div class="flex items-center space-x-2">
-                                        <input type="text" class="form-input flex-1" name="other_allowance_name[]" placeholder="手当名">
-                                        <input type="hidden" name="_labels[other_allowance_name[]]" value="比較対象日本人 その他手当名">
-                                        <input type="text" class="form-input flex-1" name="other_allowance_amount[]" placeholder="金額">
-                                        <input type="hidden" name="_labels[other_allowance_amount[]]" value="比較対象日本人 その他手当額">
+                                        <input type="text" class="form-input flex-1" name="比較対象日本人 その他手当名[]" placeholder="手当名">
+                                        <input type="text" class="form-input flex-1" name="比較対象日本人 その他手当額[]" placeholder="金額">
                                         <span>円</span>
                                     </div>
                                 </div>
@@ -466,9 +417,8 @@
                             <div class="col-span-2">
                                 <label class="text-sm font-medium">賃金規定の有無</label>
                                 <div class="radio-group mt-2">
-                                    <div class="radio-item"><input type="radio" name="wage_regulation" value="yes" id="wage-regulation-yes">有</div>
-                                    <div class="radio-item"><input type="radio" name="wage_regulation" value="no" id="wage-regulation-no" checked>無</div>
-                                    <input type="hidden" name="_labels[wage_regulation]" value="比較対象日本人 賃金規定有無">
+                                    <div class="radio-item"><input type="radio" name="比較対象日本人 賃金規定有無" value="yes" id="wage-regulation-yes">有</div>
+                                    <div class="radio-item"><input type="radio" name="比較対象日本人 賃金規定有無" value="no" id="wage-regulation-no" checked>無</div>
                                 </div>
                             </div>
                         </div>
@@ -476,46 +426,41 @@
                 </div>
                 <div class="form-group">
                     <label for="wage_reason">特定技能者に対する報酬が日本人が従事する場合の報酬額と同等以上で考える理由</label>
-                    <textarea id="wage_reason" class="form-textarea" rows="4" name="wage_reason" placeholder="日本人従業員は、豊富な経験年数を有し、各種資格や運転免許を取得しているほか、業務においても深い知識と経験を活かしてお客様との直接的な調整業務を担っています。そのため、報酬は特定技能者より高く設定されています。 一方で、特定技能者が日本人従業員と同様の業務内容や業務範囲を担い、同等の資格や経験を有する場合には、報酬も同水準となるよう設定しており、適切かつ公平な待遇が確保されています。"></textarea>
-                    <input type="hidden" name="_labels[wage_reason]" value="報酬同等以上の理由">
+                    <textarea id="wage_reason" class="form-textarea" rows="4" name="報酬同等以上の理由" placeholder="日本人従業員は、豊富な経験年数を有し、各種資格や運転免許を取得しているほか、業務においても深い知識と経験を活かしてお客様との直接的な調整業務を担っています。そのため、報酬は特定技能者より高く設定されています。 一方で、特定技能者が日本人従業員と同様の業務内容や業務範囲を担い、同等の資格や経験を有する場合には、報酬も同水準となるよう設定しており、適切かつ公平な待遇が確保されています。"></textarea>
                 </div>
             </div>
 
             <!-- 5. 雇用条件 -->
-            <div class="form-section">
+            <div class="form-section p-6 sm:p-8">
                 <h2 class="form-section-title">5. 雇用条件</h2>
                 <!-- 雇用開始日 -->
                 <div class="form-group">
                     <label>雇用開始日</label>
                     <div class="radio-group">
                         <div class="radio-item">
-                            <input type="radio" name="start_date_option" value="soon" id="start-date-soon" checked>
+                            <input type="radio" name="雇用開始日" value="soon" id="start-date-soon" checked>
                             <label for="start-date-soon">最短</label>
                         </div>
                         <div class="radio-item">
-                            <input type="radio" name="start_date_option" value="specific" id="start-date-specific">
+                            <input type="radio" name="雇用開始日" value="specific" id="start-date-specific">
                             <label for="start-date-specific">指定日</label>
                         </div>
-                        <input type="hidden" name="_labels[start_date_option]" value="雇用開始日">
                     </div>
-                    <input type="date" class="form-input mt-2 hidden" id="specific-date-input" name="specific_start_date">
-                    <input type="hidden" name="_labels[specific_start_date]" value="指定開始日">
+                    <input type="date" class="form-input mt-2 hidden" id="specific-date-input" name="指定開始日">
                 </div>
 
                 <!-- 職種・区分 -->
                 <div class="form-group">
                     <label for="field-select">職種 (特定技能告示に該当する分野・業務)</label>
-                    <select id="field-select" name="job_field" class="form-select">
+                    <select id="field-select" name="職種分野" class="form-select">
                         <option value="">分野を選択してください</option>
                     </select>
-                    <input type="hidden" name="_labels[job_field]" value="職種分野">
                 </div>
                 <div class="form-group hidden" id="category-group">
                     <label for="category-select">区分</label>
-                    <select id="category-select" name="job_category" class="form-select">
+                    <select id="category-select" name="職種区分" class="form-select">
                         <option value="">区分を選択してください</option>
                     </select>
-                    <input type="hidden" name="_labels[job_category]" value="職種区分">
                 </div>
 
                 <!-- 建設業向け追加項目 -->
@@ -523,9 +468,8 @@
                     <div class="form-group">
                         <label>建設業許可証の有無</label>
                         <div class="radio-group">
-                            <div class="radio-item"><input type="radio" name="construction_permit" value="yes" id="permit-yes">有</div>
-                            <div class="radio-item"><input type="radio" name="construction_permit" value="no" id="permit-no" checked>無</div>
-                            <input type="hidden" name="_labels[construction_permit]" value="建設業許可証有無">
+                            <div class="radio-item"><input type="radio" name="建設業許可証有無" value="yes" id="permit-yes">有</div>
+                            <div class="radio-item"><input type="radio" name="建設業許可証有無" value="no" id="permit-no" checked>無</div>
                         </div>
                         <p id="permit-note" class="text-sm text-red-600 mt-2 hidden">※建設業許可証がないと契約できません。</p>
                     </div>
@@ -533,22 +477,18 @@
                         <div class="form-group">
                             <label>許可番号</label>
                             <div class="flex flex-wrap items-center space-x-2 space-y-2 md:space-y-0">
-                                <select class="form-select w-40" id="prefecture-select" name="permit_prefecture">
+                                <select class="form-select w-40" id="prefecture-select" name="許可番号 都道府県">
                                     <option value="">都道府県</option>
                                 </select>
-                                <input type="hidden" name="_labels[permit_prefecture]" value="許可番号 都道府県">
                                 <span class="whitespace-nowrap">知事 許可（</span>
-                                <select class="form-select w-20" name="permit_type">
+                                <select class="form-select w-20" name="許可番号 種別">
                                     <option value="般">般</option>
                                     <option value="特">特</option>
                                 </select>
-                                <input type="hidden" name="_labels[permit_type]" value="許可番号 種別">
                                 <span class="whitespace-nowrap">ー</span>
-                                <input type="text" class="form-input w-20" name="permit_year" placeholder="">
-                                <input type="hidden" name="_labels[permit_year]" value="許可番号 年度">
+                                <input type="text" class="form-input w-20" name="許可番号 年度" placeholder="">
                                 <span class="whitespace-nowrap">）第</span>
-                                <input type="text" class="form-input flex-1" name="permit_number" placeholder="□□□□">
-                                <input type="hidden" name="_labels[permit_number]" value="許可番号 番号">
+                                <input type="text" class="form-input flex-1" name="許可番号 番号" placeholder="□□□□">
                                 <span class="whitespace-nowrap">号</span>
                             </div>
                         </div>
@@ -556,13 +496,11 @@
                             <label>許可の有効期間</label>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="flex items-center space-x-2">
-                                    <input type="date" class="form-input" name="permit_valid_from_date">
-                                    <input type="hidden" name="_labels[permit_valid_from_date]" value="許可有効期間(開始)">
+                                    <input type="date" class="form-input" name="許可有効期間(開始)">
                                     <span class="whitespace-nowrap">から</span>
                                 </div>
                                 <div class="flex items-center space-x-2">
-                                    <input type="date" class="form-input" name="permit_valid_to_date">
-                                    <input type="hidden" name="_labels[permit_valid_to_date]" value="許可有効期間(終了)">
+                                    <input type="date" class="form-input" name="許可有効期間(終了)">
                                     <span class="whitespace-nowrap">まで</span>
                                 </div>
                             </div>
@@ -572,16 +510,14 @@
                     <div class="form-group">
                         <label>各種協会や関連団体に加入の有無</label>
                         <div class="radio-group">
-                            <div class="radio-item"><input type="radio" name="jac_membership" value="yes" id="jac-yes">有</div>
-                            <div class="radio-item"><input type="radio" name="jac_membership" value="no" id="jac-no" checked>無</div>
-                            <input type="hidden" name="_labels[jac_membership]" value="関連団体加入有無">
+                            <div class="radio-item"><input type="radio" name="関連団体加入有無" value="yes" id="jac-yes">有</div>
+                            <div class="radio-item"><input type="radio" name="関連団体加入有無" value="no" id="jac-no" checked>無</div>
                         </div>
                         <div id="jac-organization-select-container" class="mt-2 hidden">
                             <label class="text-sm">加入団体</label>
-                            <select class="form-select" id="jac-organization-select" name="jac_organization">
+                            <select class="form-select" id="jac-organization-select" name="加入団体名">
                                 <option value="">選択してください</option>
                             </select>
-                            <input type="hidden" name="_labels[jac_organization]" value="加入団体名">
                             <p class="text-sm text-gray-500 mt-2">※このリストにない場合は「無」を選択してください。</p>
                         </div>
                         <p class="text-sm text-gray-500 mt-2">※加入団体一覧をご覧になりたい方は<a href="https://jac-skill.or.jp/membership/" target="_blank" class="text-blue-600 underline hover:text-blue-800 transition-colors">こちら</a>をご確認ください。</p>
@@ -589,21 +525,18 @@
                     <div class="form-group">
                         <label>キャリアアップ事業者IDの有無</label>
                         <div class="radio-group">
-                            <div class="radio-item"><input type="radio" name="ccus_id" value="yes" id="ccus-yes">有</div>
-                            <div class="radio-item"><input type="radio" name="ccus_id" value="no" id="ccus-no" checked>無</div>
-                            <input type="hidden" name="_labels[ccus_id]" value="キャリアアップID有無">
+                            <div class="radio-item"><input type="radio" name="キャリアアップID有無" value="yes" id="ccus-yes">有</div>
+                            <div class="radio-item"><input type="radio" name="キャリアアップID有無" value="no" id="ccus-no" checked>無</div>
                         </div>
                         <p id="ccus-note" class="text-sm text-red-600 mt-2 hidden">※キャリアアップへの登録が必要です。</p>
-                        <input type="text" class="form-input mt-2 hidden" id="ccus-id-input" name="ccus_id_number" placeholder="キャリアアップ事業者番号">
-                        <input type="hidden" name="_labels[ccus_id_number]" value="キャリアアップID番号">
+                        <input type="text" class="form-input mt-2 hidden" id="ccus-id-input" name="キャリアアップID番号" placeholder="キャリアアップ事業者番号">
                         <p class="text-sm text-gray-500 mt-2">※キャリアアップシステムについての詳細は<a href="https://www.ccus.jp/p/application" target="_blank" class="text-blue-600 underline hover:text-blue-800 transition-colors">こちら</a>をご確認ください。</p>
                     </div>
                     <div class="form-group">
                         <label>ハローワーク掲載の有無 (建設業)</label>
                         <div class="radio-group">
-                            <div class="radio-item"><input type="radio" name="hello_work" value="yes" id="hello-work-yes">有</div>
-                            <div class="radio-item"><input type="radio" name="hello_work" value="no" id="hello-work-no" checked>無</div>
-                            <input type="hidden" name="_labels[hello_work]" value="ハローワーク掲載有無">
+                            <div class="radio-item"><input type="radio" name="ハローワーク掲載有無" value="yes" id="hello-work-yes">有</div>
+                            <div class="radio-item"><input type="radio" name="ハローワーク掲載有無" value="no" id="hello-work-no" checked>無</div>
                         </div>
                         <p id="hellowork-note" class="text-sm text-red-600 mt-2 hidden">※建設業で特定技能生を受け入れる場合、ハローワークで求人を出していることが条件となります。求人票登録用の詳細は<a href="https://www.hellowork.mhlw.go.jp/" target="_blank" class="text-blue-600 underline hover:text-blue-800 transition-colors">こちら</a>をご確認ください。</p>
                     </div>
@@ -614,24 +547,20 @@
                     <label>同意事項</label>
                     <div class="flex flex-col space-y-2">
                         <div class="checkbox-item">
-                            <input type="checkbox" name="agreement_salary" id="agreement-salary">
+                            <input type="checkbox" name="同意事項(昇給)" id="agreement-salary">
                             <label for="agreement-salary" class="text-sm">特定技能生の昇給（年1回以上）に同意</label>
-                            <input type="hidden" name="_labels[agreement_salary]" value="同意事項(昇給)">
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" name="agreement_training" id="agreement-training">
+                            <input type="checkbox" name="同意事項(教育)" id="agreement-training">
                             <label for="agreement-training" class="text-sm">安全衛生教育・技能習得機会の提供に同意</label>
-                            <input type="hidden" name="_labels[agreement_training]" value="同意事項(教育)">
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" name="agreement_compensation" id="agreement-compensation">
+                            <input type="checkbox" name="同意事項(休業手当)" id="agreement-compensation">
                             <label for="agreement-compensation" class="text-sm">休業手当の補償に同意</label>
-                            <input type="hidden" name="_labels[agreement_compensation]" value="同意事項(休業手当)">
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" name="agreement_ccus" id="agreement-ccus">
+                            <input type="checkbox" name="同意事項(キャリアアップ)" id="agreement-ccus">
                             <label for="agreement-ccus" class="text-sm">キャリアアップシステムへの登録に同意</label>
-                            <input type="hidden" name="_labels[agreement_ccus]" value="同意事項(キャリアアップ)">
                         </div>
                     </div>
                 </div>
@@ -639,35 +568,29 @@
                 <!-- 職務内容・就労場所 -->
                 <div class="form-group">
                     <label for="work_details">想定する具体的な作業内容</label>
-                    <textarea id="work_details" class="form-textarea" rows="4" name="work_details" placeholder="例: 〇〇の製造ラインにおける機械操作・検品・梱包作業"></textarea>
-                    <input type="hidden" name="_labels[work_details]" value="具体的作業内容">
+                    <textarea id="work_details" class="form-textarea" rows="4" name="具体的作業内容" placeholder="例: 〇〇の製造ラインにおける機械操作・検品・梱包作業"></textarea>
                 </div>
                 <div class="form-group">
                     <label>就労予定の事業所の名称・所在地</label>
                     <div class="radio-group">
                         <div class="radio-item">
-                            <input type="radio" name="workplace_option" value="same" id="workplace-same" checked>
+                            <input type="radio" name="就労場所" value="same" id="workplace-same" checked>
                             <label for="workplace-same">本社と同じ</label>
                         </div>
                         <div class="radio-item">
-                            <input type="radio" name="workplace_option" value="other" id="workplace-other">
+                            <input type="radio" name="就労場所" value="other" id="workplace-other">
                             <label for="workplace-other">その他</label>
                         </div>
-                        <input type="hidden" name="_labels[workplace_option]" value="就労場所">
                     </div>
                     <div id="other-workplace-fields" class="mt-4 hidden">
                         <label for="workplace-postal-code" class="text-sm font-medium">郵便番号</label>
                         <div class="flex items-center space-x-2 mb-2">
                             <span class="text-gray-500">〒</span>
-                            <input type="text" id="workplace-postal-code" class="form-input w-36" name="workplace_postal_code" placeholder="ハイフン無">
-                            <input type="hidden" name="_labels[workplace_postal_code]" value="就労場所 郵便番号">
+                            <input type="text" id="workplace-postal-code" class="form-input w-36" name="就労場所 郵便番号" placeholder="ハイフン無">
                         </div>
-                        <input type="text" class="form-input mb-2" name="workplace_name" placeholder="事業所名">
-                        <input type="hidden" name="_labels[workplace_name]" value="就労場所 事業所名">
-                        <input type="text" class="form-input mb-2" name="workplace_address" id="workplace-address" placeholder="所在地">
-                        <input type="hidden" name="_labels[workplace_address]" value="就労場所 所在地">
-                        <input type="tel" class="form-input" name="workplace_phone" id="workplace-phone" placeholder="ハイフン無">
-                        <input type="hidden" name="_labels[workplace_phone]" value="就労場所 電話番号">
+                        <input type="text" class="form-input mb-2" name="就労場所 事業所名" placeholder="事業所名">
+                        <input type="text" class="form-input mb-2" name="就労場所 所在地" id="workplace-address" placeholder="所在地">
+                        <input type="tel" class="form-input" name="就労場所 電話番号" id="workplace-phone" placeholder="ハイフン無">
                     </div>
                 </div>
 
@@ -676,34 +599,28 @@
                     <div class="form-group">
                         <label>始業時間</label>
                         <div class="flex items-center space-x-2">
-                            <input type="number" name="start_hour" class="form-input w-24" placeholder="00" min="0" max="23">
-                            <input type="hidden" name="_labels[start_hour]" value="始業時間(時)">
+                            <input type="number" name="始業時間(時)" class="form-input w-24" placeholder="00" min="0" max="23">
                             <span>:</span>
-                            <select name="start_minute" class="form-select w-24" id="start-minute-select">
+                            <select name="始業時間(分)" class="form-select w-24" id="start-minute-select">
                             </select>
-                            <input type="hidden" name="_labels[start_minute]" value="始業時間(分)">
                         </div>
                     </div>
                     <div class="form-group">
                         <label>終業時間</label>
                         <div class="flex items-center space-x-2">
-                            <input type="number" name="end_hour" class="form-input w-24" placeholder="00" min="0" max="23">
-                            <input type="hidden" name="_labels[end_hour]" value="終業時間(時)">
+                            <input type="number" name="終業時間(時)" class="form-input w-24" placeholder="00" min="0" max="23">
                             <span>:</span>
-                            <select name="end_minute" class="form-select w-24" id="end-minute-select">
+                            <select name="終業時間(分)" class="form-select w-24" id="end-minute-select">
                             </select>
-                            <input type="hidden" name="_labels[end_minute]" value="終業時間(分)">
                         </div>
                     </div>
                     <div class="form-group">
                         <label>1日の所定労働時間数</label>
                         <div class="flex items-center space-x-2">
-                            <input type="number" class="form-input w-24" id="daily-working-hours-hour" name="daily_working_hours_hour" placeholder="00" min="0">
-                            <input type="hidden" name="_labels[daily_working_hours_hour]" value="所定労働時間(時)">
+                            <input type="number" class="form-input w-24" id="daily-working-hours-hour" name="所定労働時間(時)" placeholder="00" min="0">
                             <span>時間</span>
-                            <select class="form-select w-24" id="daily-working-hours-minute-select" name="daily_working_hours_minute">
+                            <select class="form-select w-24" id="daily-working-hours-minute-select" name="所定労働時間(分)">
                             </select>
-                            <input type="hidden" name="_labels[daily_working_hours_minute]" value="所定労働時間(分)">
                             <span>分</span>
                         </div>
                         <p class="text-sm text-gray-500 mt-2">※所定労働時間：企業が独自に定める労働時間。<br>法定労働時間：労働基準法で定められた労働時間の上限（1日8時間、週40時間）</p>
@@ -711,15 +628,13 @@
                     <div class="form-group">
                         <label>残業の有無</label>
                         <div class="radio-group">
-                            <div class="radio-item"><input type="radio" name="overtime_option" value="yes" id="overtime-yes">有</div>
-                            <div class="radio-item"><input type="radio" name="overtime_option" value="no" id="overtime-no" checked>無</div>
-                            <input type="hidden" name="_labels[overtime_option]" value="残業有無">
+                            <div class="radio-item"><input type="radio" name="残業有無" value="yes" id="overtime-yes">有</div>
+                            <div class="radio-item"><input type="radio" name="残業有無" value="no" id="overtime-no" checked>無</div>
                         </div>
                         <div id="overtime-fields" class="mt-2 hidden">
                             <div class="flex items-center space-x-2">
                                 <span class="whitespace-nowrap">平均残業時間:</span>
-                                 <select name="monthly_overtime_hours" class="form-select w-40"></select>
-                                 <input type="hidden" name="_labels[monthly_overtime_hours]" value="平均残業時間">
+                                 <select name="平均残業時間" class="form-select w-40"></select>
                             </div>
                         </div>
                     </div>
@@ -727,20 +642,18 @@
                         <label>変形労働制の有無</label>
                         <div class="radio-group">
                             <div class="radio-item">
-                                <input type="radio" name="variable_work_system" value="yes" id="variable-work-system-yes">
+                                <input type="radio" name="変形労働制有無" value="yes" id="variable-work-system-yes">
                                 <span>有</span>
                             </div>
                             <div class="radio-item">
-                                <input type="radio" name="variable_work_system" value="no" id="variable-work-system-no" checked>
+                                <input type="radio" name="変形労働制有無" value="no" id="variable-work-system-no" checked>
                                 <span>無</span>
                             </div>
-                            <input type="hidden" name="_labels[variable_work_system]" value="変形労働制有無">
                         </div>
                         <div id="variable-work-system-fields" class="mt-2 hidden">
                             <div class="radio-group">
-                                <div class="radio-item"><input type="radio" name="variable_work_unit" value="1年単位">1年単位</div>
-                                <div class="radio-item"><input type="radio" name="variable_work_unit" value="1カ月単位">1カ月単位</div>
-                                <input type="hidden" name="_labels[variable_work_unit]" value="変形労働制単位">
+                                <div class="radio-item"><input type="radio" name="変形労働制単位" value="1年単位">1年単位</div>
+                                <div class="radio-item"><input type="radio" name="変形労働制単位" value="1カ月単位">1カ月単位</div>
                             </div>
                         </div>
                         <p class="text-sm text-gray-500 mt-2">
@@ -750,10 +663,9 @@
                     </div>
                     <div class="form-group">
                         <label for="break-time-select">休憩時間</label>
-                        <select class="form-select" id="break-time-select" name="break_time">
+                        <select class="form-select" id="break-time-select" name="休憩時間">
                             <option value="">選択してください</option>
                         </select>
-                        <input type="hidden" name="_labels[break_time]" value="休憩時間">
                     </div>
                 </div>
 
@@ -761,32 +673,28 @@
                 <div class="form-group">
                     <label>休日</label>
                     <div class="checkbox-group">
-                        <div class="checkbox-item"><input type="checkbox" name="regular_holiday" value="sunday">日曜日</div>
-                        <div class="checkbox-item"><input type="checkbox" name="regular_holiday" value="saturday">土曜日</div>
-                        <div class="checkbox-item"><input type="checkbox" name="regular_holiday" value="public">日本の国民の休日</div>
-                        <div class="checkbox-item"><input type="checkbox" name="regular_holiday" value="company">会社指定日</div>
-                        <div class="checkbox-item"><input type="checkbox" name="regular_holiday" value="other" id="other-holiday-checkbox">その他</div>
-                        <input type="hidden" name="_labels[regular_holiday]" value="休日">
+                        <div class="checkbox-item"><input type="checkbox" name="休日" value="sunday">日曜日</div>
+                        <div class="checkbox-item"><input type="checkbox" name="休日" value="saturday">土曜日</div>
+                        <div class="checkbox-item"><input type="checkbox" name="休日" value="public">日本の国民の休日</div>
+                        <div class="checkbox-item"><input type="checkbox" name="休日" value="company">会社指定日</div>
+                        <div class="checkbox-item"><input type="checkbox" name="休日" value="other" id="other-holiday-checkbox">その他</div>
                     </div>
-                    <input type="text" class="form-input mt-2 hidden" id="other-holiday-input" name="other_holiday_text" placeholder="例: 〇曜日、〇曜日">
-                    <input type="hidden" name="_labels[other_holiday_text]" value="その他休日">
+                    <input type="text" class="form-input mt-2 hidden" id="other-holiday-input" name="その他休日" placeholder="例: 〇曜日、〇曜日">
                 </div>
                 <div class="form-group">
                     <label>その他の休暇</label>
                     <div class="checkbox-group">
-                        <div class="checkbox-item flex-1"><input type="checkbox" name="other_vacation" value="summer" id="vacation-summer">夏季</div>
-                        <div class="checkbox-item flex-1"><input type="checkbox" name="other_vacation" value="gw" id="vacation-gw">GW</div>
-                        <div class="checkbox-item flex-1"><input type="checkbox" name="other_vacation" value="new_year" id="vacation-new_year">年末年始</div>
-                        <div class="checkbox-item flex-1"><input type="checkbox" name="other_vacation" value="other" id="other-vacation-checkbox">その他</div>
-                        <input type="hidden" name="_labels[other_vacation]" value="その他の休暇">
+                        <div class="checkbox-item flex-1"><input type="checkbox" name="その他の休暇" value="summer" id="vacation-summer">夏季</div>
+                        <div class="checkbox-item flex-1"><input type="checkbox" name="その他の休暇" value="gw" id="vacation-gw">GW</div>
+                        <div class="checkbox-item flex-1"><input type="checkbox" name="その他の休暇" value="new_year" id="vacation-new_year">年末年始</div>
+                        <div class="checkbox-item flex-1"><input type="checkbox" name="その他の休暇" value="other" id="other-vacation-checkbox">その他</div>
                     </div>
                     <div id="vacation-fields-container" class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4"></div>
                 </div>
                 <div class="form-group">
                     <label for="annual-holidays">年間休日日数</label>
                     <div class="flex items-center space-x-2">
-                        <input type="number" class="form-input w-40" id="annual-holidays" name="annual_holidays" placeholder="日数" min="0" max="365">
-                        <input type="hidden" name="_labels[annual_holidays]" value="年間休日日数">
+                        <input type="number" class="form-input w-40" id="annual-holidays" name="年間休日日数" placeholder="日数" min="0" max="365">
                         <span>日</span>
                     </div>
                 </div>
@@ -807,20 +715,18 @@
                         <label for="payment-close-day-select">賃金締め日</label>
                         <div class="flex items-center">
                             <span class="mr-2">毎月</span>
-                            <select class="form-select w-40" id="payment-close-day-select" name="payment_close_day">
+                            <select class="form-select w-40" id="payment-close-day-select" name="賃金締め日">
                                 <option value="">選択してください</option>
                             </select>
-                            <input type="hidden" name="_labels[payment_close_day]" value="賃金締め日">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="payment-day-select">賃金支払日</label>
                         <div class="flex items-center">
                             <span class="mr-2">毎月</span>
-                            <select class="form-select w-40" id="payment-day-select" name="payment_day">
+                            <select class="form-select w-40" id="payment-day-select" name="賃金支払日">
                                 <option value="">選択してください</option>
                             </select>
-                            <input type="hidden" name="_labels[payment_day]" value="賃金支払日">
                         </div>
                     </div>
                 </div>
@@ -829,39 +735,32 @@
                 <div class="form-group">
                     <label>昇給</label>
                     <div class="radio-group">
-                        <div class="radio-item"><input type="radio" name="raise_option" value="yes" id="raise-yes">有</div>
-                        <div class="radio-item"><input type="radio" name="raise_option" value="no" id="raise-no" checked>無</div>
-                        <input type="hidden" name="_labels[raise_option]" value="昇給有無">
+                        <div class="radio-item"><input type="radio" name="昇給有無" value="yes" id="raise-yes">有</div>
+                        <div class="radio-item"><input type="radio" name="昇給有無" value="no" id="raise-no" checked>無</div>
                     </div>
                     <div id="raise-fields" class="mt-2 hidden space-y-2">
-                         <textarea class="form-textarea" name="raise_details" placeholder="例：年1回、勤務年数や評価に応じて年間2%以上昇給"></textarea>
-                         <input type="hidden" name="_labels[raise_details]" value="昇給詳細">
+                         <textarea class="form-textarea" name="昇給詳細" placeholder="例：年1回、勤務年数や評価に応じて年間2%以上昇給"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>賞与</label>
                     <div class="radio-group">
-                        <div class="radio-item"><input type="radio" name="bonus_option" value="yes" id="bonus-yes">有</div>
-                        <div class="radio-item"><input type="radio" name="bonus_option" value="no" id="bonus-no" checked>無</div>
-                        <input type="hidden" name="_labels[bonus_option]" value="賞与有無">
+                        <div class="radio-item"><input type="radio" name="賞与有無" value="yes" id="bonus-yes">有</div>
+                        <div class="radio-item"><input type="radio" name="賞与有無" value="no" id="bonus-no" checked>無</div>
                     </div>
                     <div id="bonus-fields" class="mt-2 hidden space-y-2">
-                        <input type="text" class="form-input" name="bonus_time" placeholder="賞与時期（例：年2回6月と12月）">
-                        <input type="hidden" name="_labels[bonus_time]" value="賞与時期">
-                        <textarea class="form-textarea" name="bonus_amount" placeholder="賞与額の内容（例：会社業績により決定）"></textarea>
-                        <input type="hidden" name="_labels[bonus_amount]" value="賞与詳細">
+                        <input type="text" class="form-input" name="賞与時期" placeholder="賞与時期（例：年2回6月と12月）">
+                        <textarea class="form-textarea" name="賞与詳細" placeholder="賞与額の内容（例：会社業績により決定）"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>退職金</label>
                     <div class="radio-group">
-                        <div class="radio-item"><input type="radio" name="severance_option" value="yes" id="severance-yes">有</div>
-                        <div class="radio-item"><input type="radio" name="severance_option" value="no" id="severance-no" checked>無</div>
-                        <input type="hidden" name="_labels[severance_option]" value="退職金有無">
+                        <div class="radio-item"><input type="radio" name="退職金有無" value="yes" id="severance-yes">有</div>
+                        <div class="radio-item"><input type="radio" name="退職金有無" value="no" id="severance-no" checked>無</div>
                     </div>
                     <div id="severance-fields" class="mt-2 hidden">
-                        <textarea class="form-textarea" name="severance_conditions" placeholder="退職金条件を記載"></textarea>
-                        <input type="hidden" name="_labels[severance_conditions]" value="退職金条件">
+                        <textarea class="form-textarea" name="退職金条件" placeholder="退職金条件を記載"></textarea>
                     </div>
                 </div>
 
@@ -869,18 +768,16 @@
                 <div class="form-group">
                     <label>社会保険加入予定の有無</label>
                     <div class="checkbox-group">
-                        <div class="checkbox-item"><input type="checkbox" name="social_insurance" value="health">健康保険</div>
-                        <div class="checkbox-item"><input type="checkbox" name="social_insurance" value="pension">厚生年金</div>
-                        <div class="checkbox-item"><input type="checkbox" name="social_insurance" value="employment">雇用保険</div>
-                        <div class="checkbox-item"><input type="checkbox" name="social_insurance" value="labor">労災保険</div>
-                        <div class="checkbox-item"><input type="checkbox" name="social_insurance" value="national_pension">国民年金</div>
-                        <div class="checkbox-item"><input type="checkbox" name="social_insurance" value="national_health">国民健康保険</div>
-                        <div class="checkbox-item"><input type="checkbox" name="social_insurance" value="other" id="other-social-insurance-checkbox">その他</div>
-                        <input type="hidden" name="_labels[social_insurance]" value="加入社会保険">
+                        <div class="checkbox-item"><input type="checkbox" name="加入社会保険" value="health">健康保険</div>
+                        <div class="checkbox-item"><input type="checkbox" name="加入社会保険" value="pension">厚生年金</div>
+                        <div class="checkbox-item"><input type="checkbox" name="加入社会保険" value="employment">雇用保険</div>
+                        <div class="checkbox-item"><input type="checkbox" name="加入社会保険" value="labor">労災保険</div>
+                        <div class="checkbox-item"><input type="checkbox" name="加入社会保険" value="national_pension">国民年金</div>
+                        <div class="checkbox-item"><input type="checkbox" name="加入社会保険" value="national_health">国民健康保険</div>
+                        <div class="checkbox-item"><input type="checkbox" name="加入社会保険" value="other" id="other-social-insurance-checkbox">その他</div>
                     </div>
                     <div id="other-social-insurance-container" class="mt-2 hidden">
-                         <input type="text" class="form-input" name="social_insurance_other_text" placeholder="具体的に記入してください">
-                         <input type="hidden" name="_labels[social_insurance_other_text]" value="その他社会保険">
+                         <input type="text" class="form-input" name="その他社会保険" placeholder="具体的に記入してください">
                     </div>
                 </div>
 
@@ -888,14 +785,12 @@
                 <div class="form-group">
                     <label>基本賃金</label>
                     <div class="radio-group mb-2">
-                        <div class="radio-item"><input type="radio" name="basic_wage_type" value="monthly" id="wage-monthly" checked>月給</div>
-                        <div class="radio-item"><input type="radio" name="basic_wage_type" value="daily" id="wage-daily">日給</div>
-                        <div class="radio-item"><input type="radio" name="basic_wage_type" value="hourly" id="wage-hourly">時給</div>
-                        <input type="hidden" name="_labels[basic_wage_type]" value="基本賃金形態">
+                        <div class="radio-item"><input type="radio" name="基本賃金形態" value="monthly" id="wage-monthly" checked>月給</div>
+                        <div class="radio-item"><input type="radio" name="基本賃金形態" value="daily" id="wage-daily">日給</div>
+                        <div class="radio-item"><input type="radio" name="基本賃金形態" value="hourly" id="wage-hourly">時給</div>
                     </div>
                     <div class="flex items-center">
-                        <input type="number" class="form-input" id="basic-wage-amount" name="basic_wage_amount" placeholder="0000">
-                        <input type="hidden" name="_labels[basic_wage_amount]" value="基本賃金額">
+                        <input type="number" class="form-input" id="basic-wage-amount" name="基本賃金額" placeholder="0000">
                         <span class="ml-2">円</span>
                     </div>
                     <p id="wage-calculation-note" class="text-sm text-gray-500 mt-2"></p>
@@ -905,9 +800,8 @@
                 <div class="form-group">
                     <label>諸手当</label>
                     <div class="radio-group mb-2">
-                        <div class="radio-item"><input type="radio" name="allowance_option" value="yes" id="allowance-yes">有</div>
-                        <div class="radio-item"><input type="radio" name="allowance_option" value="no" id="allowance-no" checked>無</div>
-                        <input type="hidden" name="_labels[allowance_option]" value="諸手当有無">
+                        <div class="radio-item"><input type="radio" name="諸手当有無" value="yes" id="allowance-yes">有</div>
+                        <div class="radio-item"><input type="radio" name="諸手当有無" value="no" id="allowance-no" checked>無</div>
                     </div>
                     <div id="allowances-container" class="mt-2 space-y-2">
                         <!-- Allowances will be added here dynamically -->
@@ -919,27 +813,23 @@
                 <div class="form-group">
                     <label>固定残業</label>
                     <div class="radio-group mb-2">
-                        <div class="radio-item"><input type="radio" name="fixed_overtime" value="yes" id="fixed-overtime-yes">有</div>
-                        <div class="radio-item"><input type="radio" name="fixed_overtime" value="no" id="fixed-overtime-no" checked>無</div>
-                        <input type="hidden" name="_labels[fixed_overtime]" value="固定残業有無">
+                        <div class="radio-item"><input type="radio" name="固定残業有無" value="yes" id="fixed-overtime-yes">有</div>
+                        <div class="radio-item"><input type="radio" name="固定残業有無" value="no" id="fixed-overtime-no" checked>無</div>
                     </div>
                     <div id="fixed-overtime-fields" class="mt-2 hidden space-y-2">
                         <div class="flex items-center space-x-2">
                            <label class="text-sm font-medium w-24">時間:</label>
-                           <input type="number" class="form-input w-40" name="fixed_overtime_hours" placeholder="時間" step="0.5">
-                           <input type="hidden" name="_labels[fixed_overtime_hours]" value="固定残業時間">
+                           <input type="number" class="form-input w-40" name="固定残業時間" placeholder="時間" step="0.5">
                            <span class="ml-2">時間</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <label class="text-sm font-medium w-24">金額:</label>
-                            <input type="number" class="form-input w-40" name="fixed_overtime_amount" placeholder="金額">
-                            <input type="hidden" name="_labels[fixed_overtime_amount]" value="固定残業代">
+                            <input type="number" class="form-input w-40" name="固定残業代" placeholder="金額">
                             <span class="ml-2">円</span>
                         </div>
                         <div>
                            <label class="text-sm font-medium">計算根拠:</label>
-                           <textarea name="fixed_overtime_basis" class="form-textarea mt-1" rows="2"></textarea>
-                           <input type="hidden" name="_labels[fixed_overtime_basis]" value="固定残業代計算根拠">
+                           <textarea name="固定残業代計算根拠" class="form-textarea mt-1" rows="2"></textarea>
                         </div>
                     </div>
                 </div>
@@ -948,34 +838,29 @@
                 <div class="form-group">
                     <label>給料からの控除（基本控除&lt;税金・社会保険・雇用&gt;以外）</label>
                     <div class="radio-group mb-2">
-                        <div class="radio-item"><input type="radio" name="deduction_option" value="yes" id="deduction-yes">有</div>
-                        <div class="radio-item"><input type="radio" name="deduction_option" value="no" id="deduction-no" checked>無</div>
-                        <input type="hidden" name="_labels[deduction_option]" value="その他控除有無">
+                        <div class="radio-item"><input type="radio" name="その他控除有無" value="yes" id="deduction-yes">有</div>
+                        <div class="radio-item"><input type="radio" name="その他控除有無" value="no" id="deduction-no" checked>無</div>
                     </div>
                     <div id="deduction-options" class="mt-2 hidden space-y-4">
                         <div class="space-y-2">
                             <div class="flex items-center space-x-2">
-                                <input type="checkbox" id="deduction-housing-check" name="deduction_check" value="housing">
+                                <input type="checkbox" id="deduction-housing-check" name="控除項目" value="housing">
                                 <label for="deduction-housing-check" class="w-24">住居費:</label>
-                                <input type="number" name="deduction_housing_amount" class="form-input w-40" placeholder="金額">
-                                <input type="hidden" name="_labels[deduction_housing_amount]" value="控除 住居費">
+                                <input type="number" name="控除 住居費" class="form-input w-40" placeholder="金額">
                                 <span class="ml-2">円</span>
                             </div>
                              <div class="flex items-center space-x-2">
-                                <input type="checkbox" id="deduction-utilities-check" name="deduction_check" value="utilities">
+                                <input type="checkbox" id="deduction-utilities-check" name="控除項目" value="utilities">
                                 <label for="deduction-utilities-check" class="w-24">水道光熱費:</label>
-                                <input type="number" name="deduction_utilities_amount" class="form-input w-40" placeholder="金額">
-                                <input type="hidden" name="_labels[deduction_utilities_amount]" value="控除 水道光熱費">
+                                <input type="number" name="控除 水道光熱費" class="form-input w-40" placeholder="金額">
                                 <span class="ml-2">円</span>
                             </div>
                              <div class="flex items-center space-x-2">
-                                <input type="checkbox" id="deduction-communication-check" name="deduction_check" value="communication">
+                                <input type="checkbox" id="deduction-communication-check" name="控除項目" value="communication">
                                 <label for="deduction-communication-check" class="w-24">通信費:</label>
-                                <input type="number" name="deduction_communication_amount" class="form-input w-40" placeholder="金額">
-                                <input type="hidden" name="_labels[deduction_communication_amount]" value="控除 通信費">
+                                <input type="number" name="控除 通信費" class="form-input w-40" placeholder="金額">
                                 <span class="ml-2">円</span>
                             </div>
-                             <input type="hidden" name="_labels[deduction_check]" value="控除項目">
                         </div>
                         <div>
                             <label>その他:</label>
@@ -989,69 +874,61 @@
             </div>
 
             <!-- 6. 求める人物像情報 -->
-            <div class="form-section">
+            <div class="form-section p-6 sm:p-8">
                 <h2 class="form-section-title">6. 求める人物像情報</h2>
                 <p class="text-sm text-gray-500 mb-4">※選択内容が細かいと人が集まりづらくなるため、ご注意ください。</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="form-group">
                         <label>性別</label>
                         <div class="radio-group">
-                            <div class="radio-item"><input type="radio" name="desired_gender" value="male">男</div>
-                            <div class="radio-item"><input type="radio" name="desired_gender" value="female">女</div>
-                            <div class="radio-item"><input type="radio" name="desired_gender" value="any" checked>不問</div>
-                            <input type="hidden" name="_labels[desired_gender]" value="希望性別">
+                            <div class="radio-item"><input type="radio" name="希望性別" value="male">男</div>
+                            <div class="radio-item"><input type="radio" name="希望性別" value="female">女</div>
+                            <div class="radio-item"><input type="radio" name="希望性別" value="any" checked>不問</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>年齢幅</label>
                         <div class="radio-group mb-2">
-                            <div class="radio-item"><input type="radio" name="desired_age" value="specific" id="age-specific">希望有</div>
-                            <div class="radio-item"><input type="radio" name="desired_age" value="any" id="age-any" checked>不問</div>
-                            <input type="hidden" name="_labels[desired_age]" value="希望年齢">
+                            <div class="radio-item"><input type="radio" name="希望年齢" value="specific" id="age-specific">希望有</div>
+                            <div class="radio-item"><input type="radio" name="希望年齢" value="any" id="age-any" checked>不問</div>
                         </div>
                         <div id="age-range-fields" class="flex items-center space-x-2 hidden">
-                            <input type="number" class="form-input w-20" id="age_min" name="age_min" placeholder="18" min="0">
-                            <input type="hidden" name="_labels[age_min]" value="希望年齢(下限)">
+                            <input type="number" class="form-input w-20" id="age_min" name="希望年齢(下限)" placeholder="18" min="0">
                             <span>歳</span>
                             <span class="mr-2">～</span>
-                            <input type="number" class="form-input w-20" id="age_max" name="age_max" placeholder="60" min="0">
-                            <input type="hidden" name="_labels[age_max]" value="希望年齢(上限)">
+                            <input type="number" class="form-input w-20" id="age_max" name="希望年齢(上限)" placeholder="60" min="0">
                             <span>歳</span>
                         </div>
                     </div>
                     <div class="form-group col-span-2">
                         <label>国籍</label>
                         <div class="checkbox-group">
-                            <div class="checkbox-item"><input type="checkbox" name="desired_nationality" value="any" id="nationality-any">不問</div>
-                            <div class="checkbox-item"><input type="checkbox" name="desired_nationality" value="indonesia">インドネシア</div>
-                            <div class="checkbox-item"><input type="checkbox" name="desired_nationality" value="vietnam">ベトナム</div>
-                            <div class="checkbox-item"><input type="checkbox" name="desired_nationality" value="cambodia">カンボジア</div>
-                            <div class="checkbox-item"><input type="checkbox" name="desired_nationality" value="nepal">ネパール</div>
-                            <div class="checkbox-item"><input type="checkbox" name="desired_nationality" value="myanmar">ミャンマー</div>
-                            <div class="checkbox-item"><input type="checkbox" name="desired_nationality" value="other" id="nationality-other-checkbox">その他</div>
-                            <input type="hidden" name="_labels[desired_nationality]" value="希望国籍">
+                            <div class="checkbox-item"><input type="checkbox" name="希望国籍" value="any" id="nationality-any">不問</div>
+                            <div class="checkbox-item"><input type="checkbox" name="希望国籍" value="indonesia">インドネシア</div>
+                            <div class="checkbox-item"><input type="checkbox" name="希望国籍" value="vietnam">ベトナム</div>
+                            <div class="checkbox-item"><input type="checkbox" name="希望国籍" value="cambodia">カンボジア</div>
+                            <div class="checkbox-item"><input type="checkbox" name="希望国籍" value="nepal">ネパール</div>
+                            <div class="checkbox-item"><input type="checkbox" name="希望国籍" value="myanmar">ミャンマー</div>
+                            <div class="checkbox-item"><input type="checkbox" name="希望国籍" value="other" id="nationality-other-checkbox">その他</div>
                         </div>
                         <div id="other-nationality-container" class="mt-2 hidden">
-                            <input type="text" class="form-input" name="other_nationality_text" placeholder="例: フィリピン, タイ">
-                            <input type="hidden" name="_labels[other_nationality_text]" value="その他希望国籍">
+                            <input type="text" class="form-input" name="その他希望国籍" placeholder="例: フィリピン, タイ">
                         </div>
                     </div>
                     <div class="form-group">
                         <label>業務経験</label>
                         <div class="radio-group">
-                            <div class="radio-item"><input type="radio" name="work_experience" value="required">必須</div>
-                            <div class="radio-item"><input type="radio" name="work_experience" value="preferable">尚可</div>
-                            <div class="radio-item"><input type="radio" name="work_experience" value="unnecessary" checked>不問</div>
-                            <input type="hidden" name="_labels[work_experience]" value="業務経験">
+                            <div class="radio-item"><input type="radio" name="業務経験" value="required">必須</div>
+                            <div class="radio-item"><input type="radio" name="業務経験" value="preferable">尚可</div>
+                            <div class="radio-item"><input type="radio" name="業務経験" value="unnecessary" checked>不問</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>運転免許</label>
                         <div class="radio-group">
-                            <div class="radio-item"><input type="radio" name="driver_license" value="japan_only">日本の運転免許取得者のみ</div>
-                            <div class="radio-item"><input type="radio" name="driver_license" value="japan_or_native">日本もしくは母国での運転免許取得者</div>
-                            <div class="radio-item"><input type="radio" name="driver_license" value="unnecessary" checked>不問</div>
-                            <input type="hidden" name="_labels[driver_license]" value="運転免許">
+                            <div class="radio-item"><input type="radio" name="運転免許" value="japan_only">日本の運転免許取得者のみ</div>
+                            <div class="radio-item"><input type="radio" name="運転免許" value="japan_or_native">日本もしくは母国での運転免許取得者</div>
+                            <div class="radio-item"><input type="radio" name="運転免許" value="unnecessary" checked>不問</div>
                         </div>
                         <div id="license-required-fields" class="mt-2 hidden">
                             <p class="text-sm text-gray-500 mt-2">
@@ -1062,87 +939,73 @@
                     <div class="form-group col-span-2">
                         <label>日本語レベル</label>
                         <div class="radio-group">
-                            <div class="radio-item"><input type="radio" name="japanese_level" value="any" checked>不問</div>
-                            <div class="radio-item"><input type="radio" name="japanese_level" value="N4">N4レベル以上</div>
-                            <div class="radio-item"><input type="radio" name="japanese_level" value="N3">N3レベル以上</div>
-                            <div class="radio-item"><input type="radio" name="japanese_level" value="N2">N2レベル以上</div>
-                            <div class="radio-item"><input type="radio" name="japanese_level" value="N1">N1レベル以上</div>
-                            <input type="hidden" name="_labels[japanese_level]" value="日本語レベル">
+                            <div class="radio-item"><input type="radio" name="日本語レベル" value="any" checked>不問</div>
+                            <div class="radio-item"><input type="radio" name="日本語レベル" value="N4">N4レベル以上</div>
+                            <div class="radio-item"><input type="radio" name="日本語レベル" value="N3">N3レベル以上</div>
+                            <div class="radio-item"><input type="radio" name="日本語レベル" value="N2">N2レベル以上</div>
+                            <div class="radio-item"><input type="radio" name="日本語レベル" value="N1">N1レベル以上</div>
                         </div>
                         <p class="text-sm text-gray-500 mt-2">※認定の目安は<a href="https://www.jlpt.jp/about/levelsummary.html" target="_blank" class="text-blue-600 underline hover:text-blue-800 transition-colors">こちら</a>をご確認ください。</p>
                     </div>
                     <div class="form-group col-span-2">
                         <label>その他備考</label>
-                        <textarea class="form-textarea" rows="2" name="other_notes" placeholder="例: 寮費補助あり、自転車通勤可"></textarea>
-                        <input type="hidden" name="_labels[other_notes]" value="その他備考">
+                        <textarea class="form-textarea" rows="2" name="その他備考" placeholder="例: 寮費補助あり、自転車通勤可"></textarea>
                     </div>
                 </div>
             </div>
             
             <!-- 7. 同意事項 -->
-            <div class="form-section">
+            <div class="form-section p-6 sm:p-8">
                 <h2 class="form-section-title">7. 同意事項</h2>
                 <div class="flex flex-col space-y-2">
                     <div class="checkbox-item">
-                        <input type="checkbox" name="final_agreement_salary" id="final-agreement-1">
+                        <input type="checkbox" name="同意事項-給与" id="final-agreement-1">
                         <label for="final-agreement-1" class="text-sm">給与は日本人と同等以上の報酬水準を保証する</label>
-                        <input type="hidden" name="_labels[final_agreement_salary]" value="同意事項-給与">
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" name="final_agreement_harassment" id="final-agreement-2">
+                        <input type="checkbox" name="同意事項-ハラスメント" id="final-agreement-2">
                         <label for="final-agreement-2" class="text-sm">職場および寮におけるハラスメント防止策を講じる</label>
-                        <input type="hidden" name="_labels[final_agreement_harassment]" value="同意事項-ハラスメント">
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" name="final_agreement_housing" id="final-agreement-3">
+                        <input type="checkbox" name="同意事項-住居" id="final-agreement-3">
                         <label for="final-agreement-3" class="text-sm">特定技能生の住居費を手取り支給額の1/3以下に抑え、1人当たりの居室面積をおおむね7.5㎡（約4.5畳）以上とする</label>
-                        <input type="hidden" name="_labels[final_agreement_housing]" value="同意事項-住居">
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" name="final_agreement_supplies" id="final-agreement-4">
+                        <input type="checkbox" name="同意事項-生活備品" id="final-agreement-4">
                         <label for="final-agreement-4" class="text-sm">生活に必要な家具、家電、布団、キッチン用具、および1週間分の生活備品を会社で準備する</label>
-                        <input type="hidden" name="_labels[final_agreement_supplies]" value="同意事項-生活備品">
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" name="final_agreement_commute" id="final-agreement-5">
+                        <input type="checkbox" name="同意事項-通勤" id="final-agreement-5">
                         <label for="final-agreement-5" class="text-sm">住居から会社までの通勤時間が徒歩15分を超える場合、自転車等の移動手段を提供する</label>
-                        <input type="hidden" name="_labels[final_agreement_commute]" value="同意事項-通勤">
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" name="final_agreement_leave" id="final-agreement-6">
+                        <input type="checkbox" name="同意事項-休暇" id="final-agreement-6">
                         <label for="final-agreement-6" class="text-sm">帰国などの長期休暇を希望する場合、最大限考慮する</label>
-                        <input type="hidden" name="_labels[final_agreement_leave]" value="同意事項-休暇">
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" name="final_agreement_support_plan" id="final-agreement-7">
+                        <input type="checkbox" name="同意事項-支援計画" id="final-agreement-7">
                         <label for="final-agreement-7" class="text-sm">支援計画の内容を理解し、その履行に努める</label>
-                        <input type="hidden" name="_labels[final_agreement_support_plan]" value="同意事項-支援計画">
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" name="final_agreement_work_hours" id="final-agreement-8">
+                        <input type="checkbox" name="同意事項-労働時間" id="final-agreement-8">
                         <label for="final-agreement-8" class="text-sm">適切な労働時間管理（残業・休日出勤は労働基準法に準拠）を行う</label>
-                        <input type="hidden" name="_labels[final_agreement_work_hours]" value="同意事項-労働時間">
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" name="final_agreement_guidelines" id="final-agreement-9">
+                        <input type="checkbox" name="同意事項-ガイドライン" id="final-agreement-9">
                         <label for="final-agreement-9" class="text-sm">出入国在留管理庁の運用方針・ガイドラインを遵守する</label>
-                        <input type="hidden" name="_labels[final_agreement_guidelines]" value="同意事項-ガイドライン">
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" name="final_agreement_laws" id="final-agreement-10">
+                        <input type="checkbox" name="同意事項-関連法規" id="final-agreement-10">
                         <label for="final-agreement-10" class="text-sm">労働基準法、最低賃金法、労働安全衛生法など国内の関連法規を遵守する</label>
-                        <input type="hidden" name="_labels[final_agreement_laws]" value="同意事項-関連法規">
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" name="final_agreement_social_insurance" id="final-agreement-11">
+                        <input type="checkbox" name="同意事項-社会保険" id="final-agreement-11">
                         <label for="final-agreement-11" class="text-sm">法人の場合、社会保険（健康保険、厚生年金、雇用保険）を適用し、個人事業主の場合は、国民健康保険、国民年金の支払いを定期的に管理する</label>
-                        <input type="hidden" name="_labels[final_agreement_social_insurance]" value="同意事項-社会保険">
                     </div>
                     <div class="checkbox-item items-start mt-2">
-                        <input type="checkbox" name="final_agreement_coexistence" id="final-agreement-12" class="mt-1">
+                        <input type="checkbox" name="同意事項-共生施策" id="final-agreement-12" class="mt-1">
                         <div class="ml-1">
                             <label for="final-agreement-12" class="text-sm">会社所在地及び特定技能生住居所在地の市役所へ共生施策協力確認書を提出いたします。</label>
-                            <input type="hidden" name="_labels[final_agreement_coexistence]" value="同意事項-共生施策">
                             <p class="text-xs text-gray-500 mt-1">
                                 ※共生施策とは「外国人が地域になじみやすく、日本人も安心できるよう、会社として協力すること」を約束する事項です。
                             </p>
@@ -1152,35 +1015,30 @@
             </div>
             
             <!-- 8. 担当者情報 -->
-            <div class="form-section">
+            <div class="form-section p-6 sm:p-8">
                 <h2 class="form-section-title">8. 担当者情報</h2>
                 <div class="form-group">
                     <label>申請窓口担当者</label>
                     <div class="radio-group mb-2">
-                        <div class="radio-item"><input type="radio" name="contact_person_option" value="same_as_rep" id="contact-same-as-rep">代表者と同じ</div>
-                        <div class="radio-item"><input type="radio" name="contact_person_option" value="different" id="contact-different" checked>その他</div>
-                        <input type="hidden" name="_labels[contact_person_option]" value="担当者">
+                        <div class="radio-item"><input type="radio" name="担当者" value="same_as_rep" id="contact-same-as-rep">代表者と同じ</div>
+                        <div class="radio-item"><input type="radio" name="担当者" value="different" id="contact-different" checked>その他</div>
                     </div>
                     <div id="contact-person-fields" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="form-group">
                             <label for="contact_name">氏名</label>
-                            <input type="text" id="contact_name" class="form-input" name="contact_name" placeholder="氏名">
-                            <input type="hidden" name="_labels[contact_name]" value="担当者氏名">
+                            <input type="text" id="contact_name" class="form-input" name="担当者氏名" placeholder="氏名">
                         </div>
                         <div class="form-group">
                             <label for="contact_department">部署名・役職</label>
-                            <input type="text" id="contact_department" class="form-input" name="contact_department" placeholder="部署名・役職">
-                            <input type="hidden" name="_labels[contact_department]" value="担当者部署・役職">
+                            <input type="text" id="contact_department" class="form-input" name="担当者部署・役職" placeholder="部署名・役職">
                         </div>
                         <div class="form-group">
                             <label for="contact_phone">電話番号</label>
-                            <input type="tel" id="contact_phone" class="form-input" name="contact_phone" placeholder="ハイフン無">
-                            <input type="hidden" name="_labels[contact_phone]" value="担当者電話番号">
+                            <input type="tel" id="contact_phone" class="form-input" name="担当者電話番号" placeholder="ハイフン無">
                         </div>
                         <div class="form-group">
                             <label for="contact_email">メールアドレス</label>
-                            <input type="email" id="contact_email" class="form-input" name="contact_email" placeholder="メールアドレス">
-                            <input type="hidden" name="_labels[contact_email]" value="担当者メールアドレス">
+                            <input type="email" id="contact_email" class="form-input" name="担当者メールアドレス" placeholder="メールアドレス">
                         </div>
                     </div>
                 </div>
@@ -1278,12 +1136,9 @@
                     const newExecutive = document.createElement('div');
                     newExecutive.className = 'flex flex-wrap items-center space-x-0 md:space-x-2 mb-2 space-y-2 md:space-y-0';
                     newExecutive.innerHTML = `
-                        <input type="text" class="form-input flex-1" name="executive_name[]" placeholder="氏名">
-                        <input type="hidden" name="_labels[executive_name[]]" value="役員氏名">
-                        <input type="text" class="form-input flex-1" name="executive_kana[]" placeholder="フリガナ">
-                        <input type="hidden" name="_labels[executive_kana[]]" value="役員フリガナ">
-                        <input type="text" class="form-input flex-1" name="executive_position[]" placeholder="役職">
-                        <input type="hidden" name="_labels[executive_position[]]" value="役員役職">
+                        <input type="text" class="form-input flex-1" name="役員氏名[]" placeholder="氏名">
+                        <input type="text" class="form-input flex-1" name="役員フリガナ[]" placeholder="フリガナ">
+                        <input type="text" class="form-input flex-1" name="役員役職[]" placeholder="役職">
                         <button type="button" class="button remove-button"><i class="fas fa-trash-alt"></i></button>
                     `;
                     container.appendChild(newExecutive);
@@ -1320,7 +1175,7 @@
                 populateOptions('field-select', Object.keys(categories));
                 
                 // 残業時間プルダウン
-                const overtimeSelect = document.querySelector('select[name="monthly_overtime_hours"]');
+                const overtimeSelect = document.querySelector('select[name="平均残業時間"]');
                 if(overtimeSelect) {
                     for(let i = 0; i <= 100; i += 0.5) {
                         const option = document.createElement('option');
@@ -1347,15 +1202,15 @@
                     });
                 };
 
-                setupToggle('financial_status_option', 'financial-fields-container', 'describe');
-                setupToggle('start_date_option', 'specific-date-input', 'specific');
-                setupToggle('variable_work_system', 'variable-work-system-fields', 'yes');
-                setupToggle('raise_option', 'raise-fields', 'yes');
-                setupToggle('bonus_option', 'bonus-fields', 'yes');
-                setupToggle('severance_option', 'severance-fields', 'yes');
-                setupToggle('fixed_overtime', 'fixed-overtime-fields', 'yes');
-                setupToggle('deduction_option', 'deduction-options', 'yes');
-                setupToggle('overtime_option', 'overtime-fields', 'yes');
+                setupToggle('決算状況の選択', 'financial-fields-container', 'describe');
+                setupToggle('雇用開始日', 'specific-date-input', 'specific');
+                setupToggle('変形労働制有無', 'variable-work-system-fields', 'yes');
+                setupToggle('昇給有無', 'raise-fields', 'yes');
+                setupToggle('賞与有無', 'bonus-fields', 'yes');
+                setupToggle('退職金有無', 'severance-fields', 'yes');
+                setupToggle('固定残業有無', 'fixed-overtime-fields', 'yes');
+                setupToggle('その他控除有無', 'deduction-options', 'yes');
+                setupToggle('残業有無', 'overtime-fields', 'yes');
                 
                 setupCheckboxToggle('other-social-insurance-checkbox', 'other-social-insurance-container');
                 setupCheckboxToggle('nationality-other-checkbox', 'other-nationality-container');
@@ -1383,19 +1238,19 @@
                     }
                 });
                 
-                setupToggle('construction_permit', 'construction-permit-fields', 'yes');
-                setupToggle('jac_membership', 'jac-organization-select-container', 'yes');
-                setupToggle('ccus_id', 'ccus-id-input', 'yes');
+                setupToggle('建設業許可証有無', 'construction-permit-fields', 'yes');
+                setupToggle('関連団体加入有無', 'jac-organization-select-container', 'yes');
+                setupToggle('キャリアアップID有無', 'ccus-id-input', 'yes');
 
 
                 // その他の休暇
-                const vacationCheckboxes = document.querySelectorAll('input[name="other_vacation"]');
+                const vacationCheckboxes = document.querySelectorAll('input[name="その他の休暇"]');
                 const vacationFieldsContainer = document.getElementById('vacation-fields-container');
                 const vacationFieldTemplates = {
-                    summer: `<div id="vacation-summer-fields" class="flex items-center space-x-2"><label class="text-sm font-medium whitespace-nowrap">夏季休暇（平均）：</label><input type="number" name="vacation_summer_days" class="form-input w-24" placeholder="日数" min="0"><input type="hidden" name="_labels[vacation_summer_days]" value="夏季休暇日数"><span>日</span></div>`,
-                    gw: `<div id="vacation-gw-fields" class="flex items-center space-x-2"><label class="text-sm font-medium whitespace-nowrap">GW休暇（平均）：</label><input type="number" name="vacation_gw_days" class="form-input w-24" placeholder="日数" min="0"><input type="hidden" name="_labels[vacation_gw_days]" value="GW休暇日数"><span>日</span></div>`,
-                    new_year: `<div id="vacation-new_year-fields" class="flex items-center space-x-2"><label class="text-sm font-medium whitespace-nowrap">年末年始休暇（平均）：</label><input type="number" name="vacation_new_year_days" class="form-input w-24" placeholder="日数" min="0"><input type="hidden" name="_labels[vacation_new_year_days]" value="年末年始休暇日数"><span>日</span></div>`,
-                    other: `<div id="vacation-other-fields" class="flex flex-wrap items-center space-x-2 md:space-x-4 w-full col-span-2"><label class="text-sm font-medium whitespace-nowrap">その他休暇：</label><input type="text" name="vacation_other_name" class="form-input flex-1" placeholder="休暇名"><input type="hidden" name="_labels[vacation_other_name]" value="その他休暇名"><div class="flex items-center space-x-2"><input type="number" name="vacation_other_days" class="form-input w-24" placeholder="日数" min="0"><input type="hidden" name="_labels[vacation_other_days]" value="その他休暇日数"><span>日</span></div></div>`
+                    summer: `<div id="vacation-summer-fields" class="flex items-center space-x-2"><label class="text-sm font-medium whitespace-nowrap">夏季休暇（平均）：</label><input type="number" name="夏季休暇日数" class="form-input w-24" placeholder="日数" min="0"><span>日</span></div>`,
+                    gw: `<div id="vacation-gw-fields" class="flex items-center space-x-2"><label class="text-sm font-medium whitespace-nowrap">GW休暇（平均）：</label><input type="number" name="GW休暇日数" class="form-input w-24" placeholder="日数" min="0"><span>日</span></div>`,
+                    new_year: `<div id="vacation-new_year-fields" class="flex items-center space-x-2"><label class="text-sm font-medium whitespace-nowrap">年末年始休暇（平均）：</label><input type="number" name="年末年始休暇日数" class="form-input w-24" placeholder="日数" min="0"><span>日</span></div>`,
+                    other: `<div id="vacation-other-fields" class="flex flex-wrap items-center space-x-2 md:space-x-4 w-full col-span-2"><label class="text-sm font-medium whitespace-nowrap">その他休暇：</label><input type="text" name="その他休暇名" class="form-input flex-1" placeholder="休暇名"><div class="flex items-center space-x-2"><input type="number" name="その他休暇日数" class="form-input w-24" placeholder="日数" min="0"><span>日</span></div></div>`
                 };
 
                 vacationCheckboxes.forEach(checkbox => {
@@ -1411,7 +1266,7 @@
                 });
                 
                 // 諸手当
-                const allowanceOptionRadios = document.querySelectorAll('input[name="allowance_option"]');
+                const allowanceOptionRadios = document.querySelectorAll('input[name="諸手当有無"]');
                 const allowancesContainer = document.getElementById('allowances-container');
                 const addAllowanceBtn = document.getElementById('add-allowance-btn');
 
@@ -1431,10 +1286,8 @@
                     const newAllowance = document.createElement('div');
                     newAllowance.className = 'allowance-item flex flex-wrap items-center space-x-0 md:space-x-2 mb-2 space-y-2 md:space-y-0';
                     newAllowance.innerHTML = `
-                        <input type="text" class="form-input flex-1" name="allowance_name[]" placeholder="手当名">
-                        <input type="hidden" name="_labels[allowance_name[]]" value="手当名">
-                        <input type="number" class="form-input flex-1" name="allowance_amount[]" placeholder="金額">
-                        <input type="hidden" name="_labels[allowance_amount[]]" value="手当金額">
+                        <input type="text" class="form-input flex-1" name="手当名[]" placeholder="手当名">
+                        <input type="number" class="form-input flex-1" name="手当金額[]" placeholder="金額">
                         <button type="button" class="button remove-button"><i class="fas fa-trash-alt"></i></button>
                     `;
                     allowancesContainer.appendChild(newAllowance);
@@ -1450,10 +1303,8 @@
                         const newDeduction = document.createElement('div');
                         newDeduction.className = 'flex items-center space-x-2';
                         newDeduction.innerHTML = `
-                            <input type="text" name="other_deduction_name[]" class="form-input flex-1" placeholder="控除名">
-                            <input type="hidden" name="_labels[other_deduction_name[]]" value="その他控除名">
-                            <input type="number" name="other_deduction_amount[]" class="form-input w-40" placeholder="金額">
-                            <input type="hidden" name="_labels[other_deduction_amount[]]" value="その他控除額">
+                            <input type="text" name="その他控除名[]" class="form-input flex-1" placeholder="控除名">
+                            <input type="number" name="その他控除額[]" class="form-input w-40" placeholder="金額">
                             <span class="mr-2">円</span>
                             <button type="button" class="button remove-button text-xs !p-2"><i class="fas fa-trash-alt"></i></button>
                         `;
@@ -1480,7 +1331,6 @@
                 form.addEventListener('submit', async function(e) {
                     e.preventDefault();
                     
-                    // Change modal button text and style for submission confirmation
                     const confirmBtn = document.getElementById('modal-confirm-btn');
                     const cancelBtn = document.getElementById('modal-cancel-btn');
                     const originalConfirmText = confirmBtn.textContent;
@@ -1489,11 +1339,10 @@
 
                     confirmBtn.textContent = '確認';
                     cancelBtn.textContent = '戻る';
-                    confirmBtn.className = 'button submit-button'; // Use submit button style
+                    confirmBtn.className = 'button submit-button';
 
                     const confirmed = await showConfirmModal('本当にこれで送信してよろしいですか？', '送信確認');
 
-                    // Restore original modal button state for other uses (like the clear button)
                     confirmBtn.textContent = originalConfirmText;
                     cancelBtn.textContent = originalCancelText;
                     confirmBtn.className = originalConfirmClasses;
@@ -1501,37 +1350,15 @@
                     if (confirmed) {
                         const formData = new FormData(form);
                         const data = {};
-                        const processedKeys = new Set();
-
-                        // 1. 通常のフォームデータを処理する
-                        for (let key of formData.keys()) {
-                            // ラベルデータはスキップ
-                            if (key.startsWith('_labels')) continue;
-                            
-                            // 配列キー（例: 'executive_name[]'）から '[]' を除いたキーを生成
-                            const cleanKey = key.replace('[]', '');
-                            
-                            // 同じキー（配列）を複数回処理しないようにする
-                            if (processedKeys.has(cleanKey)) continue;
-
-                            const allValues = formData.getAll(key);
-                            data[cleanKey] = allValues.length > 1 ? allValues : allValues[0];
-                            processedKeys.add(cleanKey);
-                        }
-
-                        // 2. ラベルデータを処理し、_labelsオブジェクトを作成する
-                        const labels = {};
-                        for (let key of formData.keys()) {
-                            if (key.startsWith('_labels[')) {
-                                // キーからフィールド名（例: 'company_name_full'）を抽出
-                                const fieldName = key.substring(8, key.length - 1).replace('[]', '');
-                                labels[fieldName] = formData.get(key);
+                        for (const [key, value] of formData.entries()) {
+                            if (data.hasOwnProperty(key)) {
+                                if (!Array.isArray(data[key])) {
+                                    data[key] = [data[key]];
+                                }
+                                data[key].push(value);
+                            } else {
+                                data[key] = value;
                             }
-                        }
-                        
-                        // ラベルデータが存在する場合のみ、dataオブジェクトに追加
-                        if (Object.keys(labels).length > 0) {
-                            data._labels = labels;
                         }
 
                         try {
@@ -1544,7 +1371,6 @@
                                 showMessage('フォームが正常に送信されました！');
                                 localStorage.removeItem(FORM_STATE_KEY);
                                 form.reset();
-                                // Trigger change events to correctly reset the UI state
                                 document.querySelectorAll('input[type="radio"], input[type="checkbox"], select').forEach(el => el.dispatchEvent(new Event('change', { bubbles: true })));
                             } else {
                                 throw new Error('サーバーエラーが発生しました。');
@@ -1586,7 +1412,13 @@
                                 }
                             });
                         } else {
-                            elements[0].value = value;
+                            if (elements.length > 1 && Array.isArray(value)) { // Handle array names (e.g. executives)
+                                elements.forEach((el, index) => {
+                                    if(value[index]) el.value = value[index];
+                                });
+                            } else {
+                                elements[0].value = value;
+                            }
                         }
                         elements.forEach(el => el.dispatchEvent(new Event('change', { bubbles: true })));
                     }
@@ -1596,4 +1428,3 @@
     </script>
 </body>
 </html>
-
